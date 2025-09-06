@@ -1,0 +1,17 @@
+[
+  {
+    "name": "GET A CLUE",
+    "probability": 0.4,
+    "usage_limit": 1
+  },
+  {
+    "name": "ROADBLOCK",
+    "probability": 0.3,
+    "usage_limit": 0
+  },
+  {
+    "name": "DETOUR",
+    "probability": 0.2,
+    "usage_limit": 4
+  }
+]

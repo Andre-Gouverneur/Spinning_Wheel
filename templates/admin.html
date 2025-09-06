@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation-back">
+            <a href="{{ url_for('index') }}">← Back to Wheel</a>
+        </div>
+        
+        <h1>Admin Panel</h1>
+        
+        <table id="prize-table">
+            <thead>
+                <tr>
+                    <th>Prize Name</th>
+                    <th>Probability</th>
+                    <th>Usage Limit</th>
+                    <th>Actions</th>  </tr>
+            </thead>
+            <tbody>
+                {% for prize in prizes %}
+                <tr>
+                    <td><input type="text" value="{{ prize.name }}"></td>
+                    <td><input type="number" step="0.01" min="0" value="{{ prize.probability }}"></td>
+                    <td><input type="number" min="0" value="{{ prize.usage_limit }}"></td>
+                    <td><button class="delete-btn">Delete</button></td> </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <button id="add-row">Add New Prize</button>
+        <button id="save-button">Save Changes</button>
+        <p id="save-message"></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

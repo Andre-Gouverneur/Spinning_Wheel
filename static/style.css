@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1, h2 {
+    color: #004d99;
+}
+
+/* --- Wheel Styling --- */
+#wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+}
+
+#wheel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #004d99;
+    transition: transform 4s cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    overflow: hidden;
+}
+
+/* The wrapper for the text label. We rotate this element. */
+.segment-text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 0%;
+    height: 150px; /* This is the radius of the wheel */
+    width: 0;
+}
+
+/* The text label itself. We position this inside the wrapper. */
+.segment-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    color: white;
+    font-size: 0.9em;
+    transform: translateY(-100px) rotate(90deg); /* This moves the text out and orients it horizontally */
+    white-space: nowrap;
+    width: 150px;
+    text-align: center;
+    margin-left: -75px; /* Centers the text label */
+}
+
+
+#spinner {
+    position: absolute;
+    top: 50%; /* Position it in the middle of the wheel */
+    left: 50%;
+    transform: translate(-50%, -50%); /* This centers it perfectly */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #c0392b; /* Change this from border-bottom to border-top */
+    margin-top: -160px; /* Move the arrow to the top, just outside the wheel */
+    z-index: 10;
+}
+
+#spin-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#spin-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#result-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 20px;
+}
