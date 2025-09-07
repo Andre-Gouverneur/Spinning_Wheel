@@ -10,12 +10,12 @@ body {
 
     /* --- Add these lines for the background image --- */
     background-image: url('/static/background.png'); /* THIS IS THE CORRECT PATH */
-    background-size: cover; /* Ensures the image covers the entire background */
+    background-size: 85%; 
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the background fixed when scrolling, if content overflows */
     /* You might want to add a fallback background-color here if the image fails to load */
-    background-color: #cccccc; 
+    background-color: #fff; 
 }
 
 /* You might also want to add a semi-transparent overlay to make text more readable */
@@ -36,6 +36,7 @@ body::before {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 150px; /* Adds 100px of space above the container */
 }
 
 h1, h2 {
